@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    background-color: black;
+    height: 70px;
+    width: 1020px;
+    justify-content: space-between;
+}
+.cl1{
+    display: flex;
+    margin-top: 10px;
+
+}
+.cl3{
+    margin-top: 10px;
+    display: flex;
+
+}
+
+button{
+    margin-left: 10px;
+    margin-right: 25px;
+    height: 30px;
+    width: 70px;
+    background-color: wheat;
+    color: gray;
+}
+h3{
+    color: gray;
+}

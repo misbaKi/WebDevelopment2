@@ -1,0 +1,43 @@
+.aa{
+    width: 69.3%;
+  height: 15%;
+  background-color: beige;
+  text-align: center;
+}
+.aa1{
+    display: flex;
+}
+
+.bb{
+    width: 70%;
+    height: 50%;
+    background-color: white;
+    padding: auto;
+    display: flex;
+    }
+
+    #bb1{
+        width: 33%;
+        height: 60%;
+        margin: 0.5%;
+    background-color: aqua;
+    text-align: center;
+    }  
+
+    #bb2{
+        width: 33%;
+        height: 60%;
+        margin: 0.5%;
+    background-color: rgb(8, 246, 194);
+    text-align: center;
+    }  
+
+    #bb3{
+
+        width: 30%;
+        height: 60%;
+        margin: 0.5%;
+    background-color: rgb(11, 248, 165);
+    text-align: center;
+    }
+

@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "name": "misba",
+      "mother": "sabiya",
+      "father": "khaleel",
+      "id": 1,
+      "dob": "2023-06-14",
+      "tob": "15:49",
+      "sex": "male",
+      "contact": 4567899432,
+      "address": "rewddhjfxfhn"
+    },
+    {
+      "name": "Maheera",
+      "mother": "Baseera",
+      "father": "Rafeeq",
+      "dob": "2023-06-22",
+      "tob": "21:24",
+      "sex": "Female",
+      "contact": 23476548965,
+      "address": "tyuueuuwipwjdhwi",
+      "id": 2
+    },
+    {
+      "name": "Kizar",
+      "mother": "Baseera",
+      "father": "Rafeeq",
+      "dob": "2023-06-17",
+      "tob": "22:26",
+      "sex": "Male",
+      "contact": 678543250875,
+      "address": "jiuoagujjjwhawuyhsawushyj",
+      "id": 3
+    }
+  ],
+  "comment": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

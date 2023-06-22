@@ -1,0 +1,147 @@
+<div class="m">
+  <main>
+    <div class="toolbar">
+      <div class="add-books">
+        <button  
+          class="btn btn-success" style=" margin-left: 10px; margin-top: 10px;"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        > <i class="bi bi-person-check-fill"></i> Add Baby's Information
+        </button>
+      </div>
+    </div>
+  </main>
+  
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet"/>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box clearfix">
+          <div class="table-responsive">
+            <table class="table user-list"style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
+              <thead>
+                <tr>
+                  <th><span>Name</span></th>
+                  <th><span>DOB</span></th>
+                  <th><span>TOB</span></th>
+                  <th><span>Sex</span></th>
+                  <th><span>MotherName</span></th>
+                  <th><span>FatherName</span></th>
+                  <th><span>Contactno.</span></th>
+                  <th><span>Address</span></th>
+                  <th><span>Action</span></th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of babyData">
+                  <td>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkt7ngJmUR0nhtkm67ofAJF8_Vn71Wxg1tkJ9ic2ew7yZRbdcDmBB5wK_QrLKluVSGraynOvpJ5KU&usqp=CAU&ec=48600112"
+                      alt=""
+                    />
+                  <h6>{{row.name}}</h6>
+                  </td>
+                  <td>{{row.dob}}</td>
+                  <td>{{row.tob}}</td>
+                  <td>{{row.sex}}</td>
+                  <td>{{row.mother}}</td>
+                  <td>{{row.father}}</td>
+                  <td>{{row.contact}}</td>
+                  <td>{{row.address}}</td>
+                  <td style="width: 20%">
+                    <button class="btn btn-info" (click)="onEdit(row)" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
+                <button (click)="deleteBaby(row)" class="btn btn-danger mx-3"><i class="bi bi-trash-fill"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content"  style="background-color: #FFECEC;">
+              <div class="modal-header"  style="background-color: #FFBDF7;">
+                  <h5 class="modal-title"  id="exampleModalLabel"> Babies Details</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form  [formGroup]="babyform" >
+                      <div class="form-group mb-2">
+                          <label for="bookname">Name</label>
+                          <input type="text" width="30%" class="form-control" formControlName="name"
+                              placeholder="Enter Name">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['name'].dirty && babyform.hasError('required','name')">Name is required </span>
+                       <br>
+                      <div class="form-group mb-2">
+                          <label for="edition">DOB</label>
+                          <input width="30%" type="date" class="form-control" formControlName="dob"
+                              placeholder="Enter DOB">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['dob'].dirty && babyform.hasError('required','dob')">DOB is required </span>
+                      <br>
+  
+                      <div class="form-group mb-2">
+                          <label for="branch">TOB</label>
+                          <input type="time" class="form-control" formControlName="tob" placeholder="Enter TOB">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['tob'].dirty && babyform.hasError('required','tob')">TOB is required </span>
+
+                      <div class="form-group mb-2">
+                        <label for="branch">SEX</label>
+                        <input type="text" class="form-control" formControlName="sex" placeholder="Enter Gender">
+                    </div>
+                    <span class="text-danger" *ngIf="babyform.controls['sex'].dirty && babyform.hasError('required','sex')">sex is required </span>
+
+                      
+                      <div class="form-group mb-2">
+                          <label for="author">Mother Name</label>
+                          <input type="text" class="form-control" formControlName="mother" placeholder="Enter Mother name">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['mother'].dirty &&babyform.hasError('required','mother')">Mother name is required </span>
+                      <br>
+  
+                      <div class="form-group mb-2">
+                          <label for="author">Father Name</label>
+                          <input type="text" class="form-control" formControlName="father" placeholder="Enter Father name">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['father'].dirty && babyform.hasError('required','father')">Father name is required </span>
+                      <br>
+                      <div class="form-group mb-2">
+                          <label for="author">Contact No.</label>
+                          <input type="number" class="form-control" formControlName="contact" placeholder="Enter Contact No.">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['contact'].dirty && babyform.hasError('required','contact')">Contact no. is required </span>
+                      <br>
+                      <div class="form-group mb-2">
+                          <label for="author">Address</label>
+                          <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+                      </div>
+                      <span class="text-danger" *ngIf="babyform.controls['address'].dirty && babyform.hasError('required','address')">Address is required </span>
+                      <br>
+                  </form>
+  
+              </div>
+  
+              <div class="modal-footer">
+                  <button type="button" id="cancel" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-octagon-fill"></i> Close</button>
+                  <button type="button" (click)="addBaby()" [disabled]="babyform.invalid" class="btn btn-success"><i class="bi bi-folder-plus"></i> Add</button>
+                  <button type="button" (click)="updateBaby()"  class="btn btn-primary"><i class="bi bi-pencil"></i> Update</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+</div>

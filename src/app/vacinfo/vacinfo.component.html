@@ -1,0 +1,190 @@
+<div class="m">
+  <main>
+    <div class="toolbar">
+      <div class="add-books">
+        <button
+          class="btn btn-success"
+          style="margin-left: 10px; margin-top: 10px"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="bi bi-person-check-fill"></i> Add Vaccine's Information
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <link
+    href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    rel="stylesheet"
+    id="bootstrap-css"
+  />
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <table style="width: 65%; height: 90%" align="center">
+    <tr>
+      <th colspan="4" style="background-color: #5e1d55; color: white">
+        <h3>Vaccine's Information </h3>
+      </th>
+    </tr>
+
+    <tr style="background-color: #32a9ee; color: white">
+      <th>Name</th>
+      <th>No. of Dose</th>
+      <th>At Birth</th>
+      <th>6weeks</th>
+      <th>9months</th>
+      <th>1year</th>
+    </tr>
+
+    <tr>
+      <td><b>10</b></td>
+      <td>Zimbabwe</td>
+      <td>12</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color: #dceaeb">
+          <div class="modal-header" style="background-color: #a52d99a0">
+            <h5 class="modal-title" id="exampleModalLabel">Babies Details</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group mb-2">
+                <label for="bookname">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Enter Name"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['name'].dirty && babyform.hasError('required','name')">Name is required </span>   -->
+
+              <div class="form-group mb-2" >
+                <label for="edition">No.Dose</label>
+                <input
+                  width="30%"
+                  type="date"
+                  class="form-control"
+                  formControlName="dob"
+                  placeholder="Enter Dose"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['dob'].dirty && babyform.hasError('required','dob')">DOB is required </span> -->
+
+              <div class="form-group mb-2" >
+                <label for="branch">At Birth</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="at birth"
+                  placeholder="Enter at Birth"
+                />
+
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['tob'].dirty && babyform.hasError('required','tob')">TOB is required </span> -->
+
+              <div class="form-group mb-2">
+                <label for="branch">6weeks</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName=""
+                  placeholder="Enter yes or No"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['sex'].dirty && babyform.hasError('required','sex')">sex is required </span>
+  
+                         -->
+              <div class="form-group mb-2">
+                <label for="author">10weeks</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="mother"
+                  placeholder="Enter yes or No"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['mother'].dirty &&babyform.hasError('required','mother')">Mother name is required </span>
+                        <br> -->
+
+              <div class="form-group mb-2">
+                <label for="author">14weeks</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="father"
+                  placeholder="Enter yes or No"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['father'].dirty && babyform.hasError('required','father')">Father name is required </span>
+                        <br> -->
+              <div class="form-group mb-2">
+                <label for="author">9Months</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="contact"
+                  placeholder="Enter Contact No."
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['contact'].dirty && babyform.hasError('required','contact')">Contact no. is required </span>
+                        <br> -->
+              <div class="form-group mb-2">
+                <label for="author">1year</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="address"
+                  placeholder="Enter yes or No"
+                />
+              </div>
+              <!-- <span class="text-danger" *ngIf="babyform.controls['address'].dirty && babyform.hasError('required','address')">Address is required </span>
+                        <br> -->
+            </form>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                id="cancel"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                <i class="bi bi-x-octagon-fill"></i> Close
+              </button>
+              <button type="button" class="btn btn-success">
+                <i class="bi bi-folder-plus"></i> Add
+              </button>
+              <button type="button" class="btn btn-primary">
+                <i class="bi bi-pencil"></i> Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </table>
+</div>
